@@ -20,7 +20,7 @@ public class ProducerController {
 
     @PostMapping("/message-producer")
     public ResponseEntity<?> messageProducer(@RequestBody MessageDto message) {
-        sqsTemplate.send("https://localhost.localstack.cloud:4566/000000000000/fila-teste", message);
+        sqsTemplate.send("https://localhost.localstack.cloud:4566/000000000000/test-queue", message);
         LOGGER.info("Message sent to queue");
 
         return ResponseEntity.ok().build();

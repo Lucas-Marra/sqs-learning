@@ -16,7 +16,7 @@ public class Consumer {
     @Autowired
     private MessageRepository messageRepository;
 
-    @SqsListener("fila-teste")
+    @SqsListener("test-queue")
     public void listen(MessageDto message) {
         messageRepository.save(message.toModel());
         LOGGER.info("Message consumed and saved on database: " + message);
